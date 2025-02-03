@@ -1,10 +1,11 @@
+const dotenv = require("dotenv");
 require("dotenv").config({ path: "./backend/.env" });
 
 
 const express = require("express");
 const connectDB = require(__dirname + "/config/db");
 
-const dotenv = require("dotenv");
+
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
@@ -48,6 +49,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT;
+console.log(PORT);
 
 const server = app.listen(
   PORT,
